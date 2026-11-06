@@ -741,7 +741,7 @@ const STATS=[['2PT Make','fg2m','g'],['2PT Miss','fg2x','r'],['3PT Make','fg3m',
 const load=(k,d)=>{try{return JSON.parse(LS.getItem(k))??d}catch(e){return d}};
 const BOOL_SET=['askAst','askZone','req5','ftStop','foulPause','askReb'];
 function normSettings(o){o=o&&typeof o==='object'&&!Array.isArray(o)?o:{};if(!(o.qLen>0))o.qLen=480;if(!(o.otLen>0))o.otLen=240;BOOL_SET.forEach(k=>{const v=o[k];o[k]=!(v===false||v==='false'||v===0||v==='0'||v==='off')});return o}
-const APP_VERSION='v1.0.3',APP_BUILD=APP_VERSION+' · 2026-11-05 · wo-icon';
+const APP_VERSION='v1.0.4',APP_BUILD=APP_VERSION+' · 2026-11-05 · pwa-id';
 // ---- v2.2 teams: Varsity / JV / Freshman. Each team has its own storage slot: wo_bb_roster_<id>, wo_bb_game_<id>, wo_bb_past_<id>, wo_bb_settings_<id>, wo_bb_keeper_<id>;
 // wo_bb_team = last selected team. Migration (once, idempotent): the old unsuffixed v2.1 keys are COPIED to the Varsity slot and verified; the old keys are left untouched as a backup and never written again.
 const TEAMS=[['varsity','Varsity'],['jv','JV'],['freshman','Freshman']],TEAM_IDS=TEAMS.map(t=>t[0]),TEAM_KEYS=['wo_bb_roster','wo_bb_game','wo_bb_past','wo_bb_settings','wo_bb_keeper'],TEAM_SEL='wo_bb_team',TEAM_MIG='wo_bb_teams_migrated';
